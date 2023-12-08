@@ -1,0 +1,9 @@
+pending
+
+1) foreign key how to use in db
+
+important
+db is locked
+just delete old migrations files
+else 
+delete de.sqlite3 (create new superuserid name password and makemigrations and migrate)

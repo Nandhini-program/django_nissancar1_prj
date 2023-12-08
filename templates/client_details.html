@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHPJabbers.com | Free Car Dealer Website Template</title>
+		<!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" /> -->
+		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+		<noscript><link rel="stylesheet" href="statics/assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="{% static 'assets/css/client.css' %}">
+
+</head>
+<body>
+  
+    <div class="container">
+        <form id="myForm" action="{% url 'dataclient' %}" method="POST">
+          {% csrf_token %}
+          <p class="title"><strong >Client Details</strong></p><br><br>
+
+          <label for="fname">First Name:</label><br>
+          <input type="text" id="fname" name="firstname" required><br>
+        
+          <label for="lname">Last Name:</label><br>
+          <input type="text" id="lname" name="lastname"><br>
+
+          <label for="Address">Address:</label><br>
+          <input type="text" id="lname" name="Address" required><br>
+
+          <label for="Phone">Phone Number:</label><br>
+          <input type="text" id="lname" name="Phone" pattern="[8-9]{1}[0-9]{9}" autoescape required title=" Please enter correct number/ at least 10 characters" ><br>
+
+          <label for="Dob">Date Of Birth:</label><br>
+          <input type="text" id="lname" name="Dob" pattern="[1-9]{4}-[0-9]{2}-[0-9]{2}" autoescape required title="Please enter valid date of birth" ><br>
+
+          <label for="district">District:</label><br>
+          <select id="district" name="district" required>
+            <option value="Chennai">Chennai</option>
+            <option value="Salem">Salem</option>
+            <option value="Trichy">Trichy</option>
+          </select><br>
+
+          <label for="state">State:</label><br>
+          <select id="state_id" name="state" required>
+            <option value="TamilNadu">TamilNadu</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Banglore">Banglore</option>
+          </select><br>
+
+          <label for="ModelName">Model Name:</label><br>
+          <input type="text" id="ModelName" name="ModelName"><br>
+
+          <label for="ModelNo">Model No:</label><br>
+          <input type="text" id="ModelNo" name="ModelNo"><br>
+
+          <label for="Price">Price:</label><br>
+          <input type="text" id="Price" name="Price"><br>
+
+          <label for="FuelType">Fuel Type:</label><br>
+          <input type="text" id="FuelType" name="FuelType"><br>
+
+          <label for="Transmission">Transmission:</label><br>
+          <input type="text" id="Transmission" name="Transmission"><br>
+
+          <label for="EngineSize">Engine Size:</label><br>
+          <input type="text" id="EngineSize" name="EngineSize"><br>
+
+          <label for="Mileage">Mileage:</label><br>
+          <input type="text" id="Mileage" name="Mileage"><br>
+
+          <label for="Warranty">Warranty:</label><br>
+          <input type="text" id="Warranty" name="Warranty"><br>
+
+          <label for="SeatingCapacity">Seating Capacity:</label><br>
+          <input type="text" id="SeatingCapacity" name="SeatingCapacity"><br>
+
+          <label for="Size">Size:</label><br>
+          <input type="text" id="Size" name="Size"><br>
+
+          <label for="FuelTank">Fuel Tank:</label><br>
+          <input type="text" id="FuelTank" name="FuelTank"><br>
+
+          <label for="subject">Subject:</label><br>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea><br>
+      
+          <button id="mysubmit" type="submit" value="Submit" onclick="home()">Submit</button>
+        
+        </form>
+      </div>    
+</body>
+<script>
+  
+      
+
+
+    var message = "{{ message }}";
+    
+      if (message) {
+        alert(message);
+      }  
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var Model_Name = urlParams.getAll('ModelName');
+    var Model_No = urlParams.getAll('ModelNo');
+    var Price = urlParams.getAll('Price');
+    var FuleType = urlParams.get('FuleType');
+    var Transmission = urlParams.get('Transmission');
+    var EngineSize = urlParams.get('EngineSize');
+    var Mileage = urlParams.get('Mileage');
+    var Warranty = urlParams.get('Warranty');
+    var SeatingCapacity = urlParams.get('SeatingCapacity');
+    var Size = urlParams.get('Size');
+    var FuelTank = urlParams.get('FuelTank');
+    
+   // alert(Mileage+","+Warranty+","+SeatingCapacity+","+Size+","+FuelTank);
+
+    document.getElementById('ModelName').value = Model_Name;
+    document.getElementById('ModelNo').value = Model_No;
+    document.getElementById('Price').value = Price;
+    document.getElementById('FuelType').value = FuleType;
+    document.getElementById('Transmission').value = Transmission;
+    document.getElementById('EngineSize').value = EngineSize;
+    document.getElementById('Mileage').value = Mileage;
+    document.getElementById('Warranty').value = Warranty;
+    document.getElementById('SeatingCapacity').value = SeatingCapacity;
+    document.getElementById('Size').value = Size;
+    document.getElementById('FuelTank').value = FuelTank;
+
+    function home(){
+        new_price=document.getElementById('Price').value;
+        if (new_price){
+          alert(new_price);
+        }
+
+    }
+    
+</script>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="'stylesheet" href="assets/css/home.css"> -->
+    <!-- <script src="assets/js/home.js"></script> -->
+    <link rel="stylesheet" href="{% static 'assets/css/NissanCss.css' %}">
+
+</head>
+<body>
+    
+    <div class="inner">
+        <h1>Mahindra XUV300
+        <button class="pull-right" id="booking" onclick="booking()" value=1>BOOKING HERE</button>
+        </h1>
+    </div>
+
+    <div class="slideshow-container" >
+        <div class="mySlides fade" >
+            <img src="{% static 'images/Mahindra XUV300 Front View.jpg' %}" style="width:80%">
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static 'images/Mahindra XUV300 Front Right black.jpg' %}" style="width:80%">
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static 'images/Mahindra XUV300 Dashbaord Display.jpg' %}" style="width:80%">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span  class="dot" onclick="currentSlide(1)"></span>
+        <span  class="dot" onclick="currentSlide(2)"></span>
+        <span  class="dot" onclick="currentSlide(3)"></span><br>
+    </div>
+    <div style="text-align:center">
+        <h2>Vehicle Specifications</h2>
+    </div>
+<section>
+        
+    <div class="pakistan">
+        <ul>
+            <li id="ModelName" value="Mahindra">
+                <strong >Model Name:</strong> Mahindra
+            </li>
+            <li id="ModelNo" value="XUV300">
+                <strong>Model No:</strong> XUV300
+            </li>
+            <li id="Price" value="9.76">
+                <strong>Price:</strong> ₹ 9.76 Lakh
+            </li>
+            <li id="FuelType" value="Petrol, Diesel">
+                <strong>Fuel Type:</strong> Petrol, Diesel
+            </li>
+            <li id="Transmission" value="Manual, Automatic (AMT)">
+                <strong>Transmission:</strong> Manual, Automatic (AMT)
+            </li>
+            <li id="EngineSize" value="1197 cc, 1497 cc">
+                <strong>Engine Size:</strong> 1197 cc, 1497 cc
+            </li>
+            <li id="Mileage" value="13.8 - 16.8 km/l">
+                <strong>Mileage:</strong> 13.8 - 16.8 km/l
+            </li>
+            <li id="Warranty" value="3 Years">
+                <strong>Warranty:</strong> 3 Years (Unlimited KMs)
+            </li>
+            <li id="SeatingCapacity" value="5 People">
+                <strong>Seating Capacity:</strong> 5 People
+            </li>
+            <li id="Size" value="3995 mm L X 1821 mm W X 1627 mm H">
+                <strong>Size:</strong> 3995 mm L X 1821 mm W X 1627 mm H
+            </li>
+            <li id="FuelTank" value="42 litres">
+                <strong>Fuel Tank:</strong> 42 litres
+            </li>
+        </ul>
+    </div>
+    </section>
+
+</body>
+
+<script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
+function booking(){
+    var booking_value=document.getElementById('booking').value;
+    //var model_no=document.getElementById('model').value;
+    var ModelName_item = document.getElementById('ModelName');
+    var ModelName_value = ModelName_item.getAttribute('value');
+    var ModelNo_item = document.getElementById('ModelNo');
+    var ModelNo_value = ModelNo_item.getAttribute('value');
+    var Price_item = document.getElementById('Price');
+    var Price_value = Price_item.getAttribute('value');
+    var FuleType_item = document.getElementById('FuelType');
+    var FuleType_value = FuleType_item.getAttribute('value');
+    var Transmission_item = document.getElementById('Transmission');
+    var Transmission_value = Transmission_item.getAttribute('value');
+    var EngineSize_item = document.getElementById('EngineSize');
+    var EngineSize_value = EngineSize_item.getAttribute('value');
+    var Mileage_item = document.getElementById('Mileage');
+    var Mileage_value = Mileage_item.getAttribute('value');
+    var Warranty_item = document.getElementById('Warranty');
+    var Warranty_value = Warranty_item.getAttribute('value');
+    var SeatingCapacity_item = document.getElementById('SeatingCapacity');
+    var SeatingCapacity_value = SeatingCapacity_item.getAttribute('value');
+    var Size_item = document.getElementById('Size');
+    var Size_value = Size_item.getAttribute('value');
+    var FuelTank_item = document.getElementById('FuelTank');
+    var FuelTank_value = FuelTank_item.getAttribute('value');
+    
+    //alert(FuleType_value+","+Transmission_value+","+EngineSize_value); 
+    window.location.href = "/client/?ModelName=" + ModelName_value + "&ModelNo=" + ModelNo_value + "&Price=" + Price_value
+    + "&FuleType=" +FuleType_value + "&Transmission=" +Transmission_value + "&EngineSize="+ EngineSize_value + "&Mileage=" + 
+    Mileage_value + "&Warranty=" + Warranty_value + "&SeatingCapacity=" + SeatingCapacity_value + "&Size=" + Size_value + "&FuelTank=" 
+    + FuelTank_value;
+    //document.getElementById('myform').submit();
+
+    //window.location.href='client_details.html'; 
+
+}
+
+
+</script>   
+</html>
+    

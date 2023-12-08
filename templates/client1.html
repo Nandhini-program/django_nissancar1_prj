@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHPJabbers.com | Free Car Dealer Website Template</title>
+		
+		<noscript><link rel="stylesheet" href="statics/assets/css/noscript.css" /></noscript>
+    <style>
+        /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 90%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    margin-left: 4%;
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc 
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }*/
+
+  /* Style the submit button with a specific background color etc */
+  button[type=submit] {
+
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left:350px;
+    
+  }
+  /*body{
+    background-color: rgb(171, 245, 245);
+  }*/
+  /* When moving the mouse over the submit button, add a darker green color */
+  button[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add a background color and some padding around the form 
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 40px;
+    
+  }*/
+  
+  .container{
+    
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(242, 191, 223);
+    border: 1px solid #443535;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    
+}
+.container label{
+    
+    margin-left: 40px;
+    
+}
+.title{
+    text-align: center;
+    font-size: 250%;
+    
+}
+#header nav a {
+    text-decoration: none;
+    color: rgb(96, 5, 5);
+    float: left;
+    font-size: 2rem;
+    padding-left: 50px;
+    
+}
+
+#header nav{
+    padding-left: 60%;
+    padding-bottom: 5px;
+}
+    </style>
+</head>
+<body>
+    <header id="header">
+    <div class="inner"></div>
+        <nav>
+                <a href="index1.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="#services">Car List</a>
+                <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+ </header>
+    <div class="container">
+        <form action="action_page.php">
+            
+          <p class="title"><strong >Client Details</strong></p><br><br>
+
+          <label for="fname">First Name:</label><br>
+          <input type="text" id="fname" name="firstname"><br>
+        
+          <label for="lname">Last Name:</label><br>
+          <input type="text" id="lname" name="lastname"><br>
+
+          <label for="lname">Address:</label><br>
+          <input type="text" id="lname" name="lastname"><br>
+
+          <label for="lname">Phone Number:</label><br>
+          <input type="text" id="lname" name="lastname"><br>
+
+          <label for="lname">Date Of Birth:</label><br>
+          <input type="text" id="lname" name="lastname"><br>
+
+          <label for="district">District:</label><br>
+          <select id="district" name="district">
+            <option value="Chennai">Chennai</option>
+            <option value="Salem">Salem</option>
+            <option value="Trichy">Trichy</option>
+          </select><br>
+
+          <label for="state">State:</label><br>
+          <select id="state_id" name="state">
+            <option value="TamilNadu">TamilNadu</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Banglore">Banglore</option>
+          </select><br>
+
+          <label for="modelname">Model Name:</label><br>
+          <input type="text" id="modelname" name="modelname"><br>
+
+          <label for="modelno">Model No:</label><br>
+          <input type="text" id="modelno" name="modelno"><br>
+
+          <label for="Price">Price:</label><br>
+          <input type="text" id="Price" name="Price"><br>
+
+          <label for="FuelType">Fuel Type:</label><br>
+          <input type="text" id="FuelType" name="FuelType"><br>
+
+          <label for="Transmission">Transmission:</label><br>
+          <input type="text" id="Transmission" name="Transmission"><br>
+
+          <label for="EngineSize">Engine Size:</label><br>
+          <input type="text" id="EngineSize" name="EngineSize"><br>
+
+          
+          <label for="Mileage">Mileage:</label><br>
+          <input type="text" id="Mileage" name="Mileage"><br>
+
+          <label for="Warranty">Warranty:</label><br>
+          <input type="text" id="Warranty" name="Warranty"><br>
+
+          <label for="SeatingCapacity">Seating Capacity:</label><br>
+          <input type="text" id="SeatingCapacity" name="SeatingCapacity"><br>
+
+          <label for="Size">Size:</label><br>
+          <input type="text" id="Size" name="Size"><br>
+
+          <label for="FuelTank">Fuel Tank:</label><br>
+          <input type="text" id="FuelTank" name="FuelTank"><br>
+
+          <label for="subject">Subject:</label><br>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea><br>
+      
+          <button type="submit" value="Submit">Submit</button>
+        
+        </form>
+      </div>    
+</body>
+</html>
